@@ -1,0 +1,140 @@
+<!DOCTYPE html> <html><head>
+        <title>Driving Survey</title>
+    <style>body {
+    background-image:url("https://media.giphy.com/media/PGwVFaPmlibxm/giphy.gif");
+    background-size:50%;
+    color:white;
+    }
+</style></head>
+    <body>
+        <form id="numberForm">
+        <h2>Are You Old Enough To Drive?</h2>
+        <input class="ipt1" placeholder="age" type="number" max="99" min="13">
+        <br>
+        <br>
+          <input class="ipt2" name="names" placeholder="First Name">
+          <br>
+          <br>
+          <input class="ipt3" name="names" placeholder="Last Name">
+          <br>
+          <br>
+          <input class="ipt4" placeholder="enter password here" type="password">
+        <br>
+          <br>
+          <br>
+         
+        Enter Your Birthday:
+          <br>
+              <input id="date1" name="bday" min="1920-12-31" max="2003-12-31" type="date"><br>
+        
+            
+          Eye Color:
+          <br>
+          <input class="eye" name="eyes" value="brown" type="radio">Brown
+          <br>
+          <input class="eye" name="eyes" value="blue" type="radio">Blue
+          <br>
+          <input class="eye" name="eyes" value="green" type="radio">Green
+          <br>
+          <input class="eye" name="eyes" value="hazel" type="radio">Hazel
+          <br>
+          <input class="eye" name="eyes" value="other" type="radio">Other
+        </form>
+        <br>
+         <input id="btn" value="Submit" type="button">
+        
+          
+                            <p id="dateTarget1"></p>
+                            <p id="dateTarget2"></p>
+                            <p id="dateTarget3"></p>
+                            <p id="dateTarget4"></p>
+                            <p id="dateTarget5"></p>
+
+              
+              
+    
+
+
+<script>
+/*__POPCODESTART__*/
+
+var number;
+var name;
+var password;
+var date;
+var eye;
+var a;
+var drive = {
+    firstName: "",    
+    lastName: "", 
+    age: 0,
+    date: "",
+    eyeColor: "", 
+    
+    
+    calcAge: function(a) {
+        if(a<15){
+        alert("You are too young to drive!"); 
+        }    
+    else if(a>15){
+        alert( "You are old enough to drive!");
+        }
+    else {
+         //alert("Gets eaten by Shark.");
+        } 
+
+    } 
+
+    
+    
+    
+};
+document.getElementById('btn').addEventListener('click', function() {
+  var formInput = document.getElementById("numberForm");
+  var names=formInput.names.value; 
+    number = document.querySelector(".ipt1").value;
+    name = document.querySelector(".ipt2").value;
+    password = document.querySelector(".ipt3").value;
+    date = document.getElementById("numberForm").date1.value;
+    eye = document.getElementById("numberForm").eyes.value;
+    ageCheck();    
+   // alert("name");
+      document.getElementById("dateTarget1").innerHTML = number;
+      document.getElementById("dateTarget2").innerHTML = name;
+      document.getElementById("dateTarget3").innerHTML = password;
+      document.getElementById("dateTarget4").innerHTML = date;
+      document.getElementById("dateTarget5").innerHTML = eye;
+  drive.firstName = "Your Name:";
+  console.log(drive.firstName);
+drive.firstName = name;
+drive.lastName= name;
+drive.age= parseInt(number);
+drive.date=date;
+drive.eyeColor=eye;
+drive.calcAge(drive.age);
+console.log("age is " + drive.age);
+});
+  
+console.log(drive.calcAge());
+
+   
+ 
+ function dateFunction1() {
+  var x = document.querySelector(".ipt1").value;
+  console.log(x);
+  document.getElementById("dateTarget1").innerHTML = x;
+
+}
+
+function ageCheck(){
+    console.log(number); 
+    console.log(name);          
+    console.log(password);
+    console.log(date);  
+    console.log(eye);
+    }
+    
+ 
+    
+
+ </script></body></html>
